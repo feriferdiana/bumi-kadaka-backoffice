@@ -1,5 +1,6 @@
 <?php
 
+	include "con/connection.php";
 	include "users/tbl_users_session.php";
 
 	$url = explode('/', $_SERVER['REQUEST_URI']);
@@ -15,7 +16,7 @@
 		unset($_COOKIE['name_user']);
 		setcookie('name_user', '', -1, '/'); 
 
-		header("Location: /".$url[1]."/index.php");
+		header("Location: ../index.php");
 	}
 
 ?>

@@ -1,4 +1,5 @@
 <?php
+
 	include "con/connection.php";
 	include "users/tbl_users.php";
 	include "users/tbl_users_session.php";
@@ -10,6 +11,8 @@
 
 	$dataLogin = loginUser($email,$md5Password);
 	$idUser = $dataLogin['id'];
+
+	session_start();
 
 	if ($dataLogin != null) {
 

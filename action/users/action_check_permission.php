@@ -1,5 +1,6 @@
 <?php
 
+	include "../con/connection.php";
 	include "tbl_users_permission.php";
 
 	if(isset($_COOKIE['id_user'])) {
@@ -15,11 +16,7 @@
 		$displayUbahAkun;
 		$displayHapusAkun;
 
-		if(count($dataPermission) == 0){
-	// 		deleteUsersSession($idUser);
-	// 		header("Location: ../index.php");
-		}
-		else{
+		if(count($dataPermission) != 0){
 			// News
 			if($dataPermission['is_news'] == true){
 				$displayNews = "block";

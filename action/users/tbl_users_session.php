@@ -1,9 +1,5 @@
 <?php
 
-	$url = explode('/', $_SERVER['REQUEST_URI']);
-	array_pop($url);
-	include $_SERVER['DOCUMENT_ROOT'] . '/' . $url[1] . '/' . 'action/con/connection.php';
-
 	require_once __DIR__ . '/../util/uuid.php'; 
 	date_default_timezone_set('Asia/Jakarta');
 
