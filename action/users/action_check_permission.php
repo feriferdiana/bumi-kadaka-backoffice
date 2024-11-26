@@ -1,6 +1,6 @@
 <?php
 
-	include "../con/connection.php";
+	include "action/con/connection.php";
 	include "tbl_users_permission.php";
 
 	if(isset($_COOKIE['id_user'])) {
@@ -75,5 +75,61 @@
 			}
 		}
     }
+
+
+    // active header
+    $url = $_SERVER['REQUEST_URI'];
+
+    $urlPath = explode("/", $url);
+
+    $page = $urlPath[count($urlPath) - 1];
+
+    $pageSplit = explode("-", $page);
+
+    $showDashboard;
+    $showBanner;
+    $showNews;
+    $showApproval;
+    $showUser;
+
+    if(isset($pageSplit[0])){
+
+    	if($pageSplit[0] == "dashboard"){
+    		$showDashboard = "active";
+    	}
+    	else{
+    		$showDashboard = "";
+    	}
+
+    	if($pageSplit[0] == "banner"){
+    		$showBanner = "active";
+    	}
+    	else{
+    		$showBanner = "";
+    	}
+
+    	if($pageSplit[0] == "news"){
+    		$showNews = "active";
+    	}
+    	else{
+    		$showNews = "";
+    	}
+
+    	if($pageSplit[0] == "approval"){
+    		$showApproval = "active";
+    	}
+    	else{
+    		$showApproval = "";
+    	}
+
+    	if($pageSplit[0] == "user"){
+    		$showUser = "active";
+    	}
+    	else{
+    		$showUser = "";
+    	}
+
+    }
+
 	
 ?>

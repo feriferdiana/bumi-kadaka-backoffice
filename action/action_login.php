@@ -34,7 +34,7 @@
 			$cookie_value_user = $users['name'];
 			setcookie($cookie_name_user, $cookie_value_user, time() + (86400 * 30), "/"); // 86400 = 1 day
 
-			header("Location: ../page-dashboard.php");
+			header("Location: ../dashboard-page.php");
 		}
 		else{
 			updateSession($idUser);
@@ -50,7 +50,7 @@
 			$cookie_value_user = $users['name'];
 			setcookie($cookie_name_user, $cookie_value_user, time() + (86400 * 30), "/"); // 86400 = 1 day
 
-			header("Location: ../page-dashboard.php");
+			header("Location: ../dashboard-page.php");
 		}
 	} else {
 		$_SESSION['message'] = "Email / Password tidak sesuai!";

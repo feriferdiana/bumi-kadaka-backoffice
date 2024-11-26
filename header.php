@@ -34,59 +34,51 @@
 					<!-- <img src="assets/img/logo/naya-wordmark-white.png" class="" alt="PT Bumi Kada"> -->
 				</span></a>
 
-				<!-- <?php include('action/users/action_check_permission.php'); ?>
-				<?php echo $dataPermission['id'];?>
-				<?php $display = "none";?> -->
+				<?php include('action/users/action_check_permission.php'); ?>
+				<?php $display = "none";?>
 
 				<!-- side  navigation-->
 				<ul class="sidebar-nav">
 					<li class="sidebar-header"></li>
-					<li class="sidebar-item active">
-						<!-- <a class="sidebar-link" href="page-dashboard.php"> -->
-						<a class="sidebar-link" href="#">
+					<li class="sidebar-item <?=$showDashboard?>">
+						<a class="sidebar-link" href="dashboard-page.php">
 							<span class="material-icons align-middle">home</span> 
 							<span class="align-middle">Dashboard</span>
 						</a>
 					</li>
-					<li class="sidebar-item" style="display:<?=$displayNews?>;">
-						<!-- <a class="sidebar-link" href="page-manage-campaign.php"> -->
-						<a class="sidebar-link" href="#">
-							<span class="material-icons align-middle">assignment</span> 
-							<span class="align-middle">Kelola Berita</span>
-						</a>
-					</li>
-					</li>
-					<li class="sidebar-item" style="display:<?=$displayBanner?>;">
-						<!-- <a class="sidebar-link" href="page-manage-product.php"> -->
-						<a class="sidebar-link" href="#">
+					<li class="sidebar-item <?=$showBanner?>" style="display:<?=$displayNews?>;">
+						<a class="sidebar-link" href="banner-list.php">
 							<span class="material-icons align-middle">burst_mode</span> 
 							<span class="align-middle">Kelola Banner</span>
 						</a>
 					</li>
-					<li class="sidebar-item" style="display:<?=$displayPersetujuan?>;">
-						<!-- <a class="sidebar-link" href="page-manage-order.php"> -->
-						<a class="sidebar-link" href="#">
+					</li>
+					<li class="sidebar-item <?=$showNews?> " style="display:<?=$displayBanner?>;">
+						<a class="sidebar-link" href="news-list.php">
+							<span class="material-icons align-middle">assignment</span> 
+							<span class="align-middle">Kelola Berita</span>
+						</a>
+					</li>
+					<li class="sidebar-item <?=$showApproval?>" style="display:<?=$displayPersetujuan?>;">
+						<a class="sidebar-link" href="approval-list.php">
 							<span class="material-icons align-middle">checklist</span> 
 							<span class="align-middle">Persetujuan</span>
 						</a>
 					</li>
-					<li class="sidebar-item" style="display:<?=$displayManagementAkun?>;">
+					<li class="sidebar-item <?=$showUser?>" style="display:<?=$displayManagementAkun?>;">
 						<a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed">
 							<span class="material-icons align-middle">manage_accounts</span> 
 							<span class="align-middle">Manajemen Akun</span>
 						</a>
 						<ul id="pages" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
 							<li class="sidebar-item" style="display:<?=$displayTambahAkun?>;">
-								<!-- <a class="sidebar-link" href="page-setting-campaign.php">Tambah Akun</a> -->
-								<a class="sidebar-link" href="#">Tambah Akun</a>
+								<a class="sidebar-link" href="user-add.php">Tambah Akun</a>
 							</li>
 							<li class="sidebar-item" style="display:<?=$displayUbahAkun?>;">
-								<!-- <a class="sidebar-link" href="page-setting-subsidi.php">Ubah Akun</a> -->
-								<a class="sidebar-link" href="#">Ubah Akun</a>
+								<a class="sidebar-link" href="user-edit.php">Ubah Akun</a>
 							</li>
 							<li class="sidebar-item" style="display:<?=$displayHapusAkun?>;">
-								<!-- <a class="sidebar-link" href="page-setting-clientid.php">Hapus Akun</a> -->
-								<a class="sidebar-link" href="#">Hapus Akun</a>
+								<a class="sidebar-link" href="user-delete.php">Hapus Akun</a>
 							</li>
 						</ul>
 					</li>
