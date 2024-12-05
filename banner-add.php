@@ -1,4 +1,5 @@
 <?php
+    session_start();
 	include('header.php');
 ?>
 
@@ -24,36 +25,39 @@
 
 					<div class="card">
                         <div class="card-body">
-                            <form enctype="multipart/form-data" class="row">
-                                <div class="mb-3 col-12 col-sm-12 col-md-12">
+                            <form action="action/action_banner_insert.php" method="post" enctype="multipart/form-data" class="row">
+                                <div class="mb-3 col-12 col-sm-12 col-md-6">
                                     <label for="subsidy-name" class="form-label">Nama Banner</label>
-                                    <input type="text" class="form-control" id="subsidy-name">
+                                    <input type="text" name="name_banner" class="form-control" id="subsidy-name" required>
                                 </div>
 
 
                                 <div class="mb-3 col-12 col-sm-12 col-md-6">
                                     <label for="formFile" class="form-label">Unggah Gambar Banner</label><br />
-                                    <button type="button" class="btn btn-primary fileup-btn w-100">
+                                    <button type="button" name="upload" class="btn btn-primary fileup-btn w-100">
                                     <span class="material-icons md-14">file_upload</span> Pilih Gambar
-                                        <input id="file-uploads" type="file" class="file" multiple accept="image/*">
+                                        <input type="file" name="file" id="file" class="file" multiple accept="image/*" required>
                                     </button>
+                                     <label for="formFile" class="form-label">
+                                        Format : .jpg, .jpeg, .png
+                                    </label>
                                 </div>
 
-                                <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                <div class="mb-3 col-12 col-sm-12 col-md-6">
                                     <label for="subsidy-name" class="form-label">Priority</label>
-                                    <input type="number" class="form-control" id="subsidy-name">
+                                    <input type="number" name="name_priority" class="form-control" id="subsidy-name" required>
                                 </div>
 
-                                <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                <div class="mb-3 col-12 col-sm-12 col-md-6">
                                     <label for="subsidy-name" class="form-label">Status</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
+                                        <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1" checked value="DEACTIVE">
                                         <label class="form-check-label" for="flexRadioDefault1">
                                            De-Active
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                        <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1" value="ACTIVE">
                                         <label class="form-check-label" for="flexRadioDefault1">
                                            Active
                                         </label>
@@ -61,15 +65,24 @@
                                 </div>
                                 
                                 <div class="w-100"></div>
-                                <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                <div class="mb-3 col-12 col-sm-12 col-md-6">
                                     <div class="d-grid">
-                                        <button type="button" class="btn btn-primary">Simpan</button>
+                                        <button type="submit" name="upload" class="btn btn-primary">Simpan</button>
                                     </div>
                                 </div>
+
+                                <div class="mb-3 col-12 col-sm-12 col-md-6">
+                                    <div class="d-grid">
+                                        <?php if (isset($_SESSION['message_banner'])) : ?>
+                                            <label class="form-label"><?php echo $_SESSION['message_banner']; ?></label>
+                                            <?php unset($_SESSION['message_banner']); ?>
+                                        <?php endif ?>
+                                    </div>
+                                </div>
+
                             </form>
                         </div>
                     </div>
-
 				</div>
 			</main>
 			<!-- //main -->

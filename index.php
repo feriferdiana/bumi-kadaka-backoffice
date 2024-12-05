@@ -64,10 +64,11 @@
 
 										<div class="text-center mt-3 d-grid">
 											<?php session_start(); ?>
-											<?php if (isset($_SESSION['message'])) : ?>
-												<label class="form-label"><?php echo $_SESSION['message']; ?></label>
-												<?php unset($_SESSION['message']); ?>
+											<?php if (isset($_SESSION['message_login'])) : ?>
+												<label class="form-label"><?php echo $_SESSION['message_login']; ?></label>
+												<?php unset($_SESSION['message_login']); ?>
 											 <?php endif ?>
+											 <?php session_destroy(); ?>
 										</div>
 									</form>
 								</div>

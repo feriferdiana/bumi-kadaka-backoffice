@@ -3,6 +3,8 @@
 	include "con/connection.php";
 	include "users/tbl_users.php";
 	include "users/tbl_users_session.php";
+	
+	session_start();
 
 	$email = $_POST["email"];
 	$password = $_POST["password"];
@@ -11,8 +13,6 @@
 
 	$dataLogin = loginUser($email,$md5Password);
 	$idUser = $dataLogin['id'];
-
-	session_start();
 
 	if ($dataLogin != null) {
 
@@ -53,7 +53,9 @@
 			header("Location: ../dashboard-page.php");
 		}
 	} else {
-		$_SESSION['message'] = "Email / Password tidak sesuai!";
+		$_SESSION['message_login'] = "Email / Password tidak sesuai!";
 		header("Location: ../index.php");
 	}
+
+	exit();
 ?>
