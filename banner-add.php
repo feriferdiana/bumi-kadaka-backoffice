@@ -26,13 +26,7 @@
 					<div class="card">
                         <div class="card-body">
                             <form action="action/action_banner_insert.php" method="post" enctype="multipart/form-data" class="row">
-                                <div class="mb-3 col-12 col-sm-12 col-md-6">
-                                    <label for="subsidy-name" class="form-label">Nama Banner</label>
-                                    <input type="text" name="name_banner" class="form-control" id="subsidy-name" required>
-                                </div>
-
-
-                                <div class="mb-3 col-12 col-sm-12 col-md-6">
+                                <div class="mb-3 col-12 col-sm-12 col-md-12">
                                     <label for="formFile" class="form-label">Unggah Gambar Banner</label><br />
                                     <button type="button" name="upload" class="btn btn-primary fileup-btn w-100">
                                     <span class="material-icons md-14">file_upload</span> Pilih Gambar
@@ -43,7 +37,7 @@
                                     </label>
                                 </div>
 
-                                <div class="mb-3 col-12 col-sm-12 col-md-6">
+                                <div class="mb-3 col-12 col-sm-12 col-md-12">
                                     <label for="subsidy-name" class="form-label">Priority</label>
                                     <input type="number" name="name_priority" class="form-control" id="subsidy-name" required>
                                 </div>
@@ -51,7 +45,7 @@
                                 <div class="mb-3 col-12 col-sm-12 col-md-6">
                                     <label for="subsidy-name" class="form-label">Status</label>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1" checked value="DEACTIVE">
+                                        <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1" value="DEACTIVE" checked>
                                         <label class="form-check-label" for="flexRadioDefault1">
                                            De-Active
                                         </label>
@@ -65,7 +59,7 @@
                                 </div>
                                 
                                 <div class="w-100"></div>
-                                <div class="mb-3 col-12 col-sm-12 col-md-6">
+                                <div class="mb-3 col-12 col-sm-12 col-md-12">
                                     <div class="d-grid">
                                         <button type="submit" name="upload" class="btn btn-primary">Simpan</button>
                                     </div>

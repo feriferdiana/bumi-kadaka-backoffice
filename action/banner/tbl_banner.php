@@ -78,4 +78,32 @@
 
 	}
 
+	function approveBanner($id){
+		global $conn;
+
+		date_default_timezone_set('Asia/Jakarta');
+		$dateNow = date('Y-m-d H:i:s');
+
+		$sql = "UPDATE banner set approved = 1, update_date = ? WHERE id = ?";
+		$stmt = $conn->prepare($sql);
+		$stmt->bind_param("ss", $dateNow, $id);
+		$stmt->execute();
+		$stmt->close();
+		$conn->close();
+	}
+
+	function rejectBanner($id){
+		global $conn;
+
+		date_default_timezone_set('Asia/Jakarta');
+		$dateNow = date('Y-m-d H:i:s');
+
+		$sql = "UPDATE banner set approved = 2, update_date = ? WHERE id = ?";
+		$stmt = $conn->prepare($sql);
+		$stmt->bind_param("ss", $dateNow, $id);
+		$stmt->execute();
+		$stmt->close();
+		$conn->close();
+	}
+
 ?>

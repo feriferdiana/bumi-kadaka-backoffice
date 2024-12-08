@@ -31,14 +31,13 @@
                             <?php include 'action/action_banner_edit.php' ?>
                             <form enctype="multipart/form-data" class="row" method="POST" action="action/action_banner_update.php">
                                 <input type="hidden" name="id" value="<?=$editBanner['id']?>">
-                                <div class="mb-3 col-12 col-sm-12 col-md-12">
-                                    <label for="subsidy-name" class="form-label">Nama Banner</label>
-                                    <input type="text" class="form-control" name="name_banner" id="subsidy-name" value="<?=$editBanner['nama_file']?>" required>
-                                </div>
-
+                                <input type="hidden" name="name_banner" value="<?=$editBanner['nama_file']?>">
                                 <div class="mb-3 col-12 col-sm-12 col-md-6" align="center">
                                      <a href="action/<?=$editBanner['source_file']?>" target="_blank">
-                                        <img src="action/<?=$editBanner['source_file']?>" width="100" height="100">
+                                        <img src="action/<?=$editBanner['source_file']?>" width="100" height=
+                                        "100">
+                                        <br>
+                                        <label for="subsidy-name" class="form-label"><?=$editBanner['nama_file']?></label>
                                     </a>
                                 </div>
 

@@ -36,14 +36,13 @@ if (isset($_POST['upload'])) {
                     echo "File berhasil diupload: <a href='$destination'>$newFileName</a>";
 
                     // insert data
-                    $nameBanner = $_POST['name_banner'];
                     $priority = $_POST['name_priority'];
                     $fileNameBanner = $_FILES['file']['name'];
                     $fileSizeBanner = $_FILES['file']['size'];
                     $source = "upload/banner/". $newFileName;
                     $status = $_POST['status'];
 
-                    insert($nameBanner, $source, $fileSizeBanner, $priority, $status);
+                    insert($newFileName, $source, $fileSizeBanner, $priority, $status);
 
                     $_SESSION['message_banner'] = "Data berhasil disimpan";
 

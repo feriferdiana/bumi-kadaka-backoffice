@@ -5,10 +5,8 @@ session_start();
 include "con/connection.php";
 include "banner/tbl_banner.php";
 
-
 // insert data
 $id = $_POST['id'];
-$nameBanner = $_POST['name_banner'];
 $priority = $_POST['name_priority'];
 $status = $_POST['status'];
 
@@ -47,11 +45,11 @@ if (isset($_POST['upload'])) {
                     $fileSizeBanner = $_FILES['file']['size'];
                     $source = "upload/banner/". $newFileName;
 
-                    updateFull($id, $nameBanner, $source, $fileSizeBanner, $priority, $status);
+                    updateFull($id, $newFileName, $source, $fileSizeBanner, $priority, $status);
 
                     $_SESSION['message_banner'] = "Data berhasil diubah";
 
-                    //header("Location: ../banner-list.php");
+                    header("Location: ../banner-list.php");
 
                 } else {
                     echo "Terjadi kesalahan saat mengupload file.";
@@ -72,14 +70,11 @@ if (isset($_POST['upload'])) {
             header("Location: ../banner-add.php");
         }
     } else {
-        echo "Ekstensi file tidak diperbolehkan. Hanya file dengan format " . implode(", ", $allowedExtensions) . " yang diterima.";
-        $_SESSION['message_banner'] = "Data gagal diubah, file dengan format " . implode(", ", $allowedExtensions) . " ";
+        $nameBanner = $_POST['name_banner'];
+        
+        $_SESSION['message_banner'] = "Data berhasil diubah";
+        updateData($id, $nameBanner, $priority, $status);
     }
-}
-else{
-
-    $_SESSION['message_banner'] = "Data berhasil diubah";
-    updateData($id, $nameBanner, $priority, $status);
 }
 
 header("Location: ../banner-list.php");

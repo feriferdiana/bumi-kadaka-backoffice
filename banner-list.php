@@ -46,7 +46,6 @@
                                     <thead>
                                         <tr>
                                             <th class="text-nowrap">No</th>
-                                            <th class="text-nowrap">Nama File</th>
                                             <th class="text-nowrap">Image</th>
                                             <th class="text-nowrap">Priority</th>
                                             <th class="text-nowrap">Status</th>
@@ -62,7 +61,6 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap"><?=$no?></td>
-                                                    <td class="text-nowrap"><?=$row['nama_file']; ?></td>
                                                     <td class="text-nowrap">
                                                         <a href="action/<?=$row['source_file']?>" target="_blank">
                                                             <img src="action/<?=$row['source_file']?>" width="100" height="100">
@@ -102,10 +100,6 @@
                                     <li class="page-item">
                                         <?php if ($page > 1): ?>
                                             <a class="page-link" href="?page=<?= $page - 1 ?>" tabindex="-1" aria-disabled="true">
-                                                Previous
-                                            </a>
-                                        <?php elseif ($page = 1): ?>
-                                            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
                                                 Previous
                                             </a>
                                         <?php endif; ?>
