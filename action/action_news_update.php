@@ -77,7 +77,7 @@ if (isset($_POST['upload'])) {
     }
 }
 
-header("Location: ../news-list.php");
+header("Location: ../news-edit-list.php");
 
 
 ?>

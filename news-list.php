@@ -29,11 +29,11 @@
                                         <input class="form-control form-control-custom me-2" type="search" placeholder="Cari nama berita" aria-label="Search" autocomplete="off" />
                                     </form>
                                 </div>
-                                <div>
+                                <!-- <div>
                                     <a href="news-add.php" class="btn btn-primary">
                                         <span class="material-icons small">add</span> Tambah
                                     </a>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -52,7 +52,7 @@
                                             <th class="text-nowrap">Status</th>
                                             <th class="text-nowrap">Tanggal Dibuat</th>
                                             <th class="text-nowrap">Approval</th>
-                                            <th class="text-nowrap">Action</th>
+                                            <th class="text-nowrap" style="display : <?=$displayDeleteBerita?>">Action</th>
                                         </tr>
                                     </thead>
                                     <?php include 'action/action_news_list.php' ?>
@@ -86,9 +86,17 @@
                                                         <?php endif?>
                                                     </td>
 
-                                                    <td class="text-nowrap">
+                                                    <!-- <td class="text-nowrap">
                                                         <a href="news-edit.php?id=<?=$row['id']?>" class="btn btn-primary">Ubah Banner</a>
-                                                    </td>
+                                                    </td> -->
+
+                                                    <?php if ($dataPermission['is_delete_news'] == true) : ?>
+                                                        <td class="text-nowrap">
+                                                            <?php if ($row['status'] != 'DELETED') : ?>
+                                                                <a href="action/action_news_delete.php?id=<?=$row['id']?>" class="btn btn-primary">Hapus</a>
+                                                            <?php endif;?>
+                                                        </td>
+                                                    <?php endif;?>
                                                 </tr>
                                             </tbody>
                                         <?php $no++;?>

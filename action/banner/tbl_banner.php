@@ -78,6 +78,22 @@
 
 	}
 
+	function deleteBanner($id){
+
+		global $conn;
+
+		date_default_timezone_set('Asia/Jakarta');
+		$dateNow = date('Y-m-d H:i:s');
+
+		$sql = "UPDATE banner set status = 'DELETED' WHERE id = ?";
+		$stmt = $conn->prepare($sql);
+		$stmt->bind_param("s", $id);
+		$stmt->execute();
+		$stmt->close();
+		$conn->close();
+
+	}
+
 	function approveBanner($id){
 		global $conn;
 

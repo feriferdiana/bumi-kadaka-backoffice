@@ -1,5 +1,4 @@
 <?php
-    include('action/users/action_check_session.php');
 	include('header.php');
 ?>
 		<!-- main wrapper -->

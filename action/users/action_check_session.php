@@ -11,9 +11,16 @@
     	$idUser = $_COOKIE['id_user'];
 
     	$userSession = findUsersSession($idUser);
-    	if($userSession['date_expired'] < date('Y-m-d H:i:s')){
-    		deleteUsersSession($idUser);
+    	if($userSession == null){
     		header("Location: index.php");
+    	}
+    	else{
+    		if($userSession['date_expired'] < date('Y-m-d H:i:s')){
+	    		deleteUsersSession($idUser);
+	    		header("Location: index.php");
+	    	}
+
+	    	updateSession($idUser);
     	}
 
     }

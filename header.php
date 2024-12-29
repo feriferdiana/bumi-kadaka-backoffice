@@ -25,6 +25,9 @@
 	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+
+	<?php include('action/users/action_check_session.php'); ?>
+
 	<div class="wrapper">
 
 		<!-- sidebar -->
@@ -46,24 +49,45 @@
 							<span class="align-middle">Dashboard</span>
 						</a>
 					</li>
-					<li class="sidebar-item <?=$showBanner?>" style="display:<?=$displayNews?>;">
-						<a class="sidebar-link" href="banner-list.php">
+					<li class="sidebar-item <?=$showBanner?>" style="display:<?=$displayManagementBanner?>;">
+						<a data-bs-target="#pages-banner" data-bs-toggle="collapse" class="sidebar-link collapsed">
 							<span class="material-icons align-middle">burst_mode</span> 
-							<span class="align-middle">Kelola Banner</span>
+							<span class="align-middle">Manajemen Banner</span>
 						</a>
+						<ul id="pages-banner" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+							<li class="sidebar-item" style="display:<?=$displayListBanner?>;">
+								<a class="sidebar-link" href="banner-list.php">Daftar Banner</a>
+							</li>
+							<li class="sidebar-item" style="display:<?=$displayAddBanner?>;">
+								<a class="sidebar-link" href="banner-add.php">Tambah Banner</a>
+							</li>
+							<li class="sidebar-item" style="display:<?=$displayEditBanner?>;">
+								<a class="sidebar-link" href="banner-edit-list.php">Ubah Banner</a>
+							</li>
+							<li class="sidebar-item" style="display:<?=$displayApprovalBanner?>;">
+								<a class="sidebar-link" href="banner-approval-list.php">Persetujuan Banner</a>
+							</li>
+						</ul>
 					</li>
-					</li>
-					<li class="sidebar-item <?=$showNews?> " style="display:<?=$displayBanner?>;">
-						<a class="sidebar-link" href="news-list.php">
+					<li class="sidebar-item <?=$showNews?>" style="display:<?=$displayManagementBerita?>;">
+						<a data-bs-target="#pages-news" data-bs-toggle="collapse" class="sidebar-link collapsed">
 							<span class="material-icons align-middle">assignment</span> 
-							<span class="align-middle">Kelola Berita</span>
+							<span class="align-middle">Manajemen Berita</span>
 						</a>
-					</li>
-					<li class="sidebar-item <?=$showApproval?>" style="display:<?=$displayPersetujuan?>;">
-						<a class="sidebar-link" href="approval-list.php">
-							<span class="material-icons align-middle">checklist</span> 
-							<span class="align-middle">Persetujuan</span>
-						</a>
+						<ul id="pages-news" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+							<li class="sidebar-item" style="display:<?=$displayListBerita?>;">
+								<a class="sidebar-link" href="news-list.php">Daftar Berita</a>
+							</li>
+							<li class="sidebar-item" style="display:<?=$displayAddBerita?>;">
+								<a class="sidebar-link" href="news-add.php">Tambah Berita</a>
+							</li>
+							<li class="sidebar-item" style="display:<?=$displayEditBerita?>;">
+								<a class="sidebar-link" href="news-edit-list.php">Ubah Berita</a>
+							</li>
+							<li class="sidebar-item" style="display:<?=$displayApprovalBerita?>;">
+								<a class="sidebar-link" href="news-approval-list.php">Persetujuan Berita</a>
+							</li>
+						</ul>
 					</li>
 					<li class="sidebar-item <?=$showUser?>" style="display:<?=$displayManagementAkun?>;">
 						<a data-bs-target="#pages" data-bs-toggle="collapse" class="sidebar-link collapsed">
@@ -71,16 +95,28 @@
 							<span class="align-middle">Manajemen Akun</span>
 						</a>
 						<ul id="pages" class="sidebar-dropdown list-unstyled collapse " data-bs-parent="#sidebar">
+							<li class="sidebar-item" style="display:<?=$displayDaftarAkun?>;">
+								<a class="sidebar-link" href="user-list.php">Daftar Akun</a>
+							</li>
 							<li class="sidebar-item" style="display:<?=$displayTambahAkun?>;">
 								<a class="sidebar-link" href="user-add.php">Tambah Akun</a>
 							</li>
 							<li class="sidebar-item" style="display:<?=$displayUbahAkun?>;">
-								<a class="sidebar-link" href="user-edit.php">Ubah Akun</a>
+								<a class="sidebar-link" href="user-edit-list.php">Ubah Akun</a>
 							</li>
 							<li class="sidebar-item" style="display:<?=$displayHapusAkun?>;">
 								<a class="sidebar-link" href="user-delete.php">Hapus Akun</a>
 							</li>
+							<li class="sidebar-item" style="display:<?=$displayApprovalAkun?>;">
+								<a class="sidebar-link" href="user-approval-list.php">Persetujuan Akun</a>
+							</li>
 						</ul>
+					</li>
+					<li class="sidebar-item <?=$showAccess?>" style="display:<?=$displayManagementAkses?>;">
+						<a class="sidebar-link" href="access-list.php">
+							<span class="material-icons align-middle">key</span> 
+							<span class="align-middle">Manajemen Akses</span>
+						</a>
 					</li>
 				</ul>
 				<!-- //side  navigation-->

@@ -36,6 +36,8 @@
 		date_default_timezone_set('Asia/Jakarta');
 		$dateNow = date('Y-m-d H:i:s');
 
+		echo $id;
+
 		$sql = "UPDATE news set description = ?,  nama_file = ?, source_file = ?, size = ?, priority = ?, status = ?, approved = 0 , update_date = ? WHERE id = ?";
 		$stmt = $conn->prepare($sql);
 		$stmt->bind_param("ssssssss", $description, $nameFile, $sourceFile, $size, $priority, $status, $dateNow, $id);
@@ -52,9 +54,25 @@
 		date_default_timezone_set('Asia/Jakarta');
 		$dateNow = date('Y-m-d H:i:s');
 
-		$sql = "UPDATE news set description = ?, priority = ?, status = ?, update_date = ? WHERE id = ?";
+		$sql = "UPDATE news set description = ?, priority = ?, status = ?, approved = 0, update_date = ? WHERE id = ?";
 		$stmt = $conn->prepare($sql);
 		$stmt->bind_param("sssss", $description, $priority, $status, $dateNow, $id);
+		$stmt->execute();
+		$stmt->close();
+		$conn->close();
+
+	}
+
+	function deleteNews($id){
+
+		global $conn;
+
+		date_default_timezone_set('Asia/Jakarta');
+		$dateNow = date('Y-m-d H:i:s');
+
+		$sql = "UPDATE news set status = 'DELETED'WHERE id = ?";
+		$stmt = $conn->prepare($sql);
+		$stmt->bind_param("s", $id);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();

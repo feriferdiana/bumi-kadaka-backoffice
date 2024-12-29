@@ -17,22 +17,12 @@
 					<div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
 						<h1 class="h3 text-purple-600 mb-3"><strong>Daftar</strong> Banner</h1>
 
-                        <?php if (isset($_SESSION['message_banner'])) : ?>
-                            <label class="form-label"><?php echo $_SESSION['message_banner']; ?></label>
-                            <?php unset($_SESSION['message_banner']); ?>
-                        <?php endif ?>
-
                         <div>
                             <div class="d-flex mb-2">
                                 <div class="me-1">
                                     <form class="d-flex search" onsubmit="return false">
                                         <input class="form-control form-control-custom me-2" type="search" placeholder="Cari nama banner" aria-label="Search" autocomplete="off" />
                                     </form>
-                                </div>
-                                <div>
-                                    <a href="banner-add.php" class="btn btn-primary">
-                                        <span class="material-icons small">add</span> Tambah
-                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -51,7 +41,7 @@
                                             <th class="text-nowrap">Status</th>
                                             <th class="text-nowrap">Tanggal Dibuat</th>
                                             <th class="text-nowrap">Approval</th>
-                                            <th class="text-nowrap">Action</th>
+                                            <th class="text-nowrap" style="display : <?=$displayDeleteBanner?>">Action</th>
                                         </tr>
                                     </thead>
                                     <?php include 'action/action_banner_list.php' ?>
@@ -83,10 +73,13 @@
                                                             Reject
                                                         <?php endif?>
                                                     </td>
-
-                                                    <td class="text-nowrap">
-                                                        <a href="banner-edit.php?id=<?=$row['id']?>" class="btn btn-primary">Ubah Banner</a>
-                                                    </td>
+                                                    <?php if ($dataPermission['is_delete_banner'] == true) : ?>
+                                                        <td class="text-nowrap">
+                                                            <?php if ($row['status'] != 'DELETED') : ?>
+                                                                <a href="action/action_banner_delete.php?id=<?=$row['id']?>" class="btn btn-primary">Hapus</a>
+                                                            <?php endif?>
+                                                        </td>
+                                                    <?php endif;?>
                                                 </tr>
                                             </tbody>
                                         <?php $no++;?>

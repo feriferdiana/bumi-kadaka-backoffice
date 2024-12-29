@@ -21,6 +21,11 @@
                         <h1 class="h3 text-purple-600 mt-1">
                             <strong>Tambah</strong> Banner
                         </h1>
+
+                        <?php if (isset($_SESSION['message_banner'])) : ?>
+                            <label class="form-label"><?php echo $_SESSION['message_banner']; ?></label>
+                            <?php unset($_SESSION['message_banner']); ?>
+                        <?php endif ?>
                     </div>
 
 					<div class="card">

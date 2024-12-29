@@ -17,13 +17,15 @@ if($category == "BANNER"){
 	if($status == "APPROVE"){
 		approveBanner($id);
 
-		$_SESSION['message_approval'] = "Data banner berhasil disetujui";
+		$_SESSION['message_banner'] = "Data banner berhasil disetujui";
 	}
 	else{
 		rejectBanner($id);
 
-		$_SESSION['message_approval'] = "Data banner berhasil ditolak";
+		$_SESSION['message_banner'] = "Data banner berhasil ditolak";
 	}
+
+	header("Location: ../banner-approval-list.php");
 }
 
 // approval news
@@ -34,16 +36,16 @@ if($category == "NEWS"){
 	if($status == "APPROVE"){
 		approveNews($id);
 
-		$_SESSION['message_approval'] = "Data berita berhasil disetujui";
+		$_SESSION['message_news'] = "Data berita berhasil disetujui";
 	}
 	else{
 		rejectNews($id);
 
-		$_SESSION['message_approval'] = "Data berita berhasil ditolak";
+		$_SESSION['message_news'] = "Data berita berhasil ditolak";
 	}
-}
 
-header("Location: ../approval-list.php");
+	header("Location: ../news-approval-list.php");
+}
 
 
 ?>

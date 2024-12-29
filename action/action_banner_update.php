@@ -49,25 +49,25 @@ if (isset($_POST['upload'])) {
 
                     $_SESSION['message_banner'] = "Data berhasil diubah";
 
-                    header("Location: ../banner-list.php");
+                    header("Location: ../banner-edit-list.php");
 
                 } else {
                     echo "Terjadi kesalahan saat mengupload file.";
                     $_SESSION['message_banner'] = "Data gagal diubah, Terjadi kesalahan saat mengupload file.";
 
-                    header("Location: ../banner-add.php");
+                    header("Location: ../banner-edit.php");
                 }
             } else {
                 echo "Ukuran file terlalu besar. Maksimum 5MB.";
                 $_SESSION['message_banner'] = "Data gagal diubah, Ukuran file terlalu besar. Maksimum 5MB.";
 
-                header("Location: ../banner-add.php");
+                header("Location: ../banner-edit.php");
             }
         } else {
             echo "Terjadi kesalahan: $fileError.";
             $_SESSION['message_banner'] = "Data gagal diubah, Terjadi kesalahan: $fileError.";
 
-            header("Location: ../banner-add.php");
+            header("Location: ../banner-edit.php");
         }
     } else {
         $nameBanner = $_POST['name_banner'];
@@ -77,6 +77,6 @@ if (isset($_POST['upload'])) {
     }
 }
 
-header("Location: ../banner-list.php");
+header("Location: ../banner-edit-list.php");
 
 ?>

@@ -46,7 +46,7 @@ if (isset($_POST['upload'])) {
 
                     $_SESSION['message_banner'] = "Data berhasil disimpan";
 
-                    header("Location: ../banner-list.php");
+                    header("Location: ../banner-add.php");
 
                 } else {
                     echo "Terjadi kesalahan saat mengupload file.";

@@ -38,34 +38,71 @@
                                 </div>
 
 
-                                <div class="mb-3 col-12 col-sm-12 col-md-12">
-                                    <label for="formFile" class="form-label">Gambar Banner</label><br />
-                                    <div class="mb-3 col-12 col-sm-12 col-md-12" align="center">
-                                        <a href="action/<?=$detailApproval['source_file']?>" target="_blank">
-                                            <img src="action/<?=$detailApproval['source_file']?>" width="100" height=
-                                            "100">
-                                            <br>
-                                            <label for="subsidy-name" class="form-label"><?=$detailApproval['nama_file']?></label>
-                                        </a>
+                                <?php if($detailApproval['category'] == 'BANNER'): ?>
+                                    <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                        <label for="formFile" class="form-label">Gambar Banner</label><br />
+                                        <div class="mb-3 col-12 col-sm-12 col-md-12" align="center">
+                                            <a href="action/<?=$detailApproval['source_file']?>" target="_blank">
+                                                <img src="action/<?=$detailApproval['source_file']?>" width="100" height=
+                                                "100">
+                                                <br>
+                                                <label for="subsidy-name" class="form-label"><?=$detailApproval['nama_file']?></label>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="mb-3 col-12 col-sm-12 col-md-12">
-                                    <label for="subsidy-name" class="form-label">Priority</label>
-                                    <input type="number" class="form-control" id="subsidy-name" value="<?=$detailApproval['priority']?>" readonly>
-                                </div>
+                                    <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                        <label for="subsidy-name" class="form-label">Priority</label>
+                                        <input type="number" class="form-control" id="subsidy-name" value="<?=$detailApproval['priority']?>" readonly>
+                                    </div>
 
-                                <div class="mb-3 col-12 col-sm-12 col-md-12">
-                                    <label for="subsidy-name" class="form-label">Status</label>
-                                    <input type="text" class="form-control" id="subsidy-name" value="PENDING" readonly>
-                                </div>
-                                
-                                <div class="w-100"></div>
+                                    <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                        <label for="subsidy-name" class="form-label">Status</label>
+                                        <input type="text" class="form-control" id="subsidy-name" value="PENDING" readonly>
+                                    </div>
+                                    
+                                    <div class="w-100"></div>
+
+                                <?php elseif($detailApproval['category'] == 'NEWS'): ?>
+                                    <div class="mb-3 col-12 col-sm-12 col-md-12"
+                                        >
+                                        <textarea class="form-control" id="subsidy-name"readonly><?=$detailApproval['deskripsi']?></textarea>
+                                    </div>
+                                    <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                        <label for="formFile" class="form-label">Gambar Berita</label><br />
+                                        <div class="mb-3 col-12 col-sm-12 col-md-12" align="center">
+                                            <a href="action/<?=$detailApproval['source_file']?>" target="_blank">
+                                                <img src="action/<?=$detailApproval['source_file']?>" width="100" height=
+                                                "100">
+                                                <br>
+                                                <label for="subsidy-name" class="form-label"><?=$detailApproval['nama_file']?></label>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                        <label for="subsidy-name" class="form-label">Priority</label>
+                                        <input type="number" class="form-control" id="subsidy-name" value="<?=$detailApproval['priority']?>" readonly>
+                                    </div>
+
+                                    <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                        <label for="subsidy-name" class="form-label">Status</label>
+                                        <input type="text" class="form-control" id="subsidy-name" value="PENDING" readonly>
+                                    </div>
+                                    
+                                    <div class="w-100"></div>
+                                <?php else : ?>
+                                    <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                        <label for="subsidy-name" class="form-label">Nama</label>
+                                        <input type="number" class="form-control" id="subsidy-name" value="<?=$detailApproval['status']?>" readonly>
+                                    </div>
+                                <?php endif; ?>
+
                                 <div class="mb-3 col-12 col-sm-12 col-md-6">
-                                    <div class="d-grid">
-                                        <button type="submit" name="status_approval" value="REJECT" class="btn btn-danger">Tolak</button>
+                                        <div class="d-grid">
+                                            <button type="submit" name="status_approval" value="REJECT" class="btn btn-danger">Tolak</button>
+                                        </div>
                                     </div>
-                                </div>
                                 <div class="mb-3 col-12 col-sm-12 col-md-6">
                                     <div class="d-grid">
                                         <button type="submit" name="status_approval" value="APPROVE" class="btn btn-primary">Setujui</button>

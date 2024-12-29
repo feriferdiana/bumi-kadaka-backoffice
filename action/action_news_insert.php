@@ -47,7 +47,7 @@ if (isset($_POST['upload'])) {
 
                     $_SESSION['message_news'] = "Data berhasil disimpan";
 
-                    header("Location: ../news-list.php");
+                    header("Location: ../news-add.php");
 
                 } else {
                     echo "Terjadi kesalahan saat mengupload file.";
