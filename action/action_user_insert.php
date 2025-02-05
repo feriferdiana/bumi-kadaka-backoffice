@@ -4,6 +4,7 @@ session_start();
 
 include "con/connection.php";
 include "users/tbl_users.php";
+include "email/action_send_email.php";
 
 $email = $_POST['email'];
 
@@ -53,6 +54,8 @@ else {
                         $gender = $_POST['gender'];
                         $source = "upload/users/". $newFileName;
 
+
+                        //$randomString = bin2hex(random_bytes(5));
                         $password = md5($email);
 
                         insert($nama, $tanggal_lahir, $tempat_lahir, $gender, $email, $password, $source);

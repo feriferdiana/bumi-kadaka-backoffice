@@ -147,4 +147,19 @@
 		$conn->close();
 	}
 
+	function updatePass($new_pass, $id){
+		global $conn;
+
+		date_default_timezone_set('Asia/Jakarta');
+
+		$dateNow = date('Y-m-d H:i:s');
+
+		$sql = "UPDATE users set password = ?, update_date = ? WHERE id = ?";
+		$stmt = $conn->prepare($sql);
+		$stmt->bind_param("sss", md5($new_pass), $dateNow, $id);
+		$stmt->execute();
+		$stmt->close();
+		$conn->close();
+	}
+
 ?>
