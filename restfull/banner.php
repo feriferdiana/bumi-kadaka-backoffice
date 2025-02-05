@@ -1,5 +1,5 @@
 <?php
-	include "action/banner_action.php";
+	include "../action/banner_action.php";
 
 	header("Content-Type: application/json");
 	header("Access-Control-Allow-Origin: *");

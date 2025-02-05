@@ -1,10 +1,16 @@
 <?php
 
 include "con/connection.php";
-include "users/tbl_users.php";
 
 $id_user= isset($_COOKIE['id_user']) ? $_COOKIE['id_user'] : null;
 
-$detailUsersNavbar = findUsers($id_user);
+$sql = "SELECT * FROM users where id = ? and status = 'ACTIVE'";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $id_user); // "i" untuk integer, "s" untuk string dan harus variable
+$stmt->execute();
+
+$result = $stmt->get_result();
+
+$detailUsersNavbar = $result->fetch_assoc();
 
 ?>
