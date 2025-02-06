@@ -46,7 +46,7 @@
                                     <thead>
                                         <tr>
                                             <th class="text-nowrap">No</th>
-                                            <th class="text-nowrap">Deskripsi</th>
+                                            <th class="text-nowrap">Judul</th>
                                             <th class="text-nowrap">Image</th>
                                             <th class="text-nowrap">Priority</th>
                                             <th class="text-nowrap">Status</th>
@@ -62,7 +62,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap"><?=$no?></td>
-                                                    <td class="text-nowrap"><?=$row['description']; ?></td>
+                                                    <td class="text-nowrap"><?=$row['title']; ?></td>
                                                     <td class="text-nowrap">
                                                         <a href="action/<?=$row['source_file']?>" target="_blank">
                                                             <img src="action/<?=$row['source_file']?>" width="100" height="100">
