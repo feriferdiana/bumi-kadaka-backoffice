@@ -32,6 +32,11 @@
                         <div class="card-body">
                             <form action="action/action_news_insert.php" method="post" enctype="multipart/form-data" class="row">
                                 <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                    <label for="subsidy-name" class="form-label">Judul</label>
+                                    <input type="text" name="title" class="form-control" id="subsidy-name" required>
+                                </div>
+
+                                <div class="mb-3 col-12 col-sm-12 col-md-12">
                                     <label for="subsidy-name" class="form-label">Deskripsi</label>
                                     <textarea class="form-control" id="subsidy-name" name="description" required></textarea>
                                 </div>

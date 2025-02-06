@@ -20,9 +20,9 @@
                         <div>
                             <div class="d-flex mb-2">
                                 <div class="me-1">
-                                    <form class="d-flex search" onsubmit="return false">
+                                    <!-- <form class="d-flex search" onsubmit="return false">
                                         <input class="form-control form-control-custom me-2" type="search" placeholder="Cari nama banner" aria-label="Search" autocomplete="off" />
-                                    </form>
+                                    </form> -->
                                 </div>
                             </div>
                         </div>

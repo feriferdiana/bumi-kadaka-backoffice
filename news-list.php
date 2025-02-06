@@ -17,17 +17,17 @@
 					<div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
 						<h1 class="h3 text-purple-600 mb-3"><strong>Daftar</strong> Berita</h1>
 
-                        <?php if (isset($_SESSION['message_news'])) : ?>
-                            <label class="form-label"><?php echo $_SESSION['message_news']; ?></label>
-                            <?php unset($_SESSION['message_news']); ?>
-                        <?php endif ?>
-
                         <div>
                             <div class="d-flex mb-2">
                                 <div class="me-1">
-                                    <form class="d-flex search" onsubmit="return false">
+                                    <!-- <form class="d-flex search" onsubmit="return false">
                                         <input class="form-control form-control-custom me-2" type="search" placeholder="Cari nama berita" aria-label="Search" autocomplete="off" />
-                                    </form>
+                                    </form> -->
+
+                                    <?php if (isset($_SESSION['message_news'])) : ?>
+                                        <label class="form-label"><?php echo $_SESSION['message_news']; ?></label>
+                                        <?php unset($_SESSION['message_news']); ?>
+                                    <?php endif ?>
                                 </div>
                                 <!-- <div>
                                     <a href="news-add.php" class="btn btn-primary">
@@ -46,7 +46,7 @@
                                     <thead>
                                         <tr>
                                             <th class="text-nowrap">No</th>
-                                            <th class="text-nowrap">Deskripsi</th>
+                                            <th class="text-nowrap">Judul</th>
                                             <th class="text-nowrap">Image</th>
                                             <th class="text-nowrap">Priority</th>
                                             <th class="text-nowrap">Status</th>
@@ -62,7 +62,7 @@
                                             <tbody>
                                                 <tr>
                                                     <td class="text-nowrap"><?=$no?></td>
-                                                    <td class="text-nowrap"><?=$row['description']; ?></td>
+                                                    <td class="text-nowrap"><?=$row['title']; ?></td>
                                                     <td class="text-nowrap">
                                                         <a href="action/<?=$row['source_file']?>" target="_blank">
                                                             <img src="action/<?=$row['source_file']?>" width="100" height="100">

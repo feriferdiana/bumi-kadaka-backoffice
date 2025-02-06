@@ -7,6 +7,7 @@ include "news/tbl_news.php";
 
 // update data
 $id = $_POST['id'];
+$title = $_POST['title'];
 $description = $_POST['description'];
 $priority = $_POST['priority'];
 $status = $_POST['status'];
@@ -47,7 +48,7 @@ if (isset($_POST['upload'])) {
                     $source = "upload/news/". $newFileName;
                     $status = $_POST['status'];
 
-                    updateFull($id, $description, $newFileName, $source, $fileSizeBanner, $priority, $status);
+                    updateFull($id, $title, $description, $newFileName, $source, $fileSizeBanner, $priority, $status);
 
                     $_SESSION['message_news'] = "Data berhasil diubah";
 
@@ -73,7 +74,7 @@ if (isset($_POST['upload'])) {
         }
     } else {
         $_SESSION['message_news'] = "Data berhasil diubah";
-        updateData($id, $description, $priority, $status);
+        updateData($id, $title, $description, $priority, $status);
     }
 }
 

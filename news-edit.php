@@ -31,6 +31,12 @@
                             <?php include 'action/action_news_edit.php' ?>
                             <form enctype="multipart/form-data" class="row" method="POST" action="action/action_news_update.php">
                                 <input type="hidden" name="id" value="<?=$editNews['id']?>">
+                                
+                                <div class="mb-3 col-12 col-sm-12 col-md-12">
+                                    <label for="subsidy-name" class="form-label">Judul</label>
+                                    <input type="text" class="form-control" id="subsidy-name" name="title" value="<?=$editNews['title']?>">
+                                </div>
+
                                 <div class="mb-3 col-12 col-sm-12 col-md-12">
                                     <label for="subsidy-name" class="form-label">Deskripsi</label>
                                     <textarea class="form-control" id="subsidy-name" name="description"><?=$editNews['description']?></textarea>

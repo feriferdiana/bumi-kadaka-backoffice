@@ -1,6 +1,6 @@
 <?php
 
-	function insert($description, $nameFile, $sourceFile, $size, $priority, $status){
+	function insert($title, $description, $nameFile, $sourceFile, $size, $priority, $status){
 		global $conn;
 
 		date_default_timezone_set('Asia/Jakarta');
@@ -8,9 +8,9 @@
 		$id = uniqid();
 		$dateNow = date('Y-m-d H:i:s');
 
-		$sql = "INSERT INTO news (id, description, nama_file, source_file, size, priority, status, approved, created_date) VALUES (?,?,?,?,?,?,?,0,?)";
+		$sql = "INSERT INTO news (id, title, description, nama_file, source_file, size, priority, status, approved, created_date) VALUES (?,?,?,?,?,?,?,?,0,?)";
 		$stmt = $conn->prepare($sql);
-		$stmt->bind_param("ssssssss", $id, $description, $nameFile, $sourceFile, $size, $priority, $status, $dateNow);
+		$stmt->bind_param("sssssssss", $id, $title, $description, $nameFile, $sourceFile, $size, $priority, $status, $dateNow);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
@@ -29,7 +29,7 @@
 		return $data;
 	}
 
-	function updateFull($id, $description, $nameFile, $sourceFile, $size, $priority, $status){
+	function updateFull($id, $title, $description, $nameFile, $sourceFile, $size, $priority, $status){
 
 		global $conn;
 
@@ -38,25 +38,25 @@
 
 		echo $id;
 
-		$sql = "UPDATE news set description = ?,  nama_file = ?, source_file = ?, size = ?, priority = ?, status = ?, approved = 0 , update_date = ? WHERE id = ?";
+		$sql = "UPDATE news set title = ?, description = ?,  nama_file = ?, source_file = ?, size = ?, priority = ?, status = ?, approved = 0 , update_date = ? WHERE id = ?";
 		$stmt = $conn->prepare($sql);
-		$stmt->bind_param("ssssssss", $description, $nameFile, $sourceFile, $size, $priority, $status, $dateNow, $id);
+		$stmt->bind_param("sssssssss", $title, $description, $nameFile, $sourceFile, $size, $priority, $status, $dateNow, $id);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();
 
 	}
 
-	function updateData($id, $description, $priority, $status){
+	function updateData($id, $title, $description, $priority, $status){
 
 		global $conn;
 
 		date_default_timezone_set('Asia/Jakarta');
 		$dateNow = date('Y-m-d H:i:s');
 
-		$sql = "UPDATE news set description = ?, priority = ?, status = ?, approved = 0, update_date = ? WHERE id = ?";
+		$sql = "UPDATE news set title = ?, description = ?, priority = ?, status = ?, approved = 0, update_date = ? WHERE id = ?";
 		$stmt = $conn->prepare($sql);
-		$stmt->bind_param("sssss", $description, $priority, $status, $dateNow, $id);
+		$stmt->bind_param("ssssss", $title, $description, $priority, $status, $dateNow, $id);
 		$stmt->execute();
 		$stmt->close();
 		$conn->close();

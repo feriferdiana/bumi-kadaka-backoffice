@@ -17,18 +17,18 @@
 					<div class="d-flex justify-content-between align-items-center flex-sm-row flex-column">
 						<h1 class="h3 text-purple-600 mb-3"><strong>Daftar</strong> Persetujuan Berita</h1>
 
-                        <?php if (isset($_SESSION['message_news'])) : ?>
-                            <label class="form-label"><?php echo $_SESSION['message_news']; ?></label>
-                            <?php unset($_SESSION['message_news']); ?>
-                        <?php endif ?>
-
                         <div>
                             <div class="d-flex mb-2">
-                                <div class="me-1">
+                                <?php if (isset($_SESSION['message_news'])) : ?>
+                                    <label class="form-label"><?php echo $_SESSION['message_news']; ?></label>
+                                    <?php unset($_SESSION['message_news']); ?>
+                                <?php endif ?>
+
+                                <!-- <div class="me-1">
                                     <form class="d-flex search" onsubmit="return false">
                                         <input class="form-control form-control-custom me-2" type="search" placeholder="Cari nama berita" aria-label="Search" autocomplete="off" />
                                     </form>
-                                </div>
+                                </div> -->
                                 <!-- <div>
                                     <a href="news-add.php" class="btn btn-primary">
                                         <span class="material-icons small">add</span> Tambah
