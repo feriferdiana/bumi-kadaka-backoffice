@@ -70,19 +70,30 @@
                         <div class="col-12 col-md-12 mb-3">
                             <div class="card h-100">
                                 <div class="card-body">
-                                    <h4 class="fw-bold text-green-600">Daftar Nama Pengunjung</h4>
+                                    <h4 class="fw-bold text-green-600">Daftar Pengunjung</h4>
                                     <div class="table-responsive" id="table-vscroll" style="height: 320px;">
                                         <table class="table table-hover">
                                             <thead>
                                                 <tr>
-                                                    <th class="text-nowrap">Nama</th>
-                                                    <th class="text-nowrap">Email</th>
-                                                    <th class="text-nowrap">Tanggal Berkunjung</th>
                                                     <th class="text-nowrap">Alamat</th>
+                                                    <th class="text-nowrap">Kota</th>
+                                                    <th class="text-nowrap">Provinsi</th>
+                                                    <th class="text-nowrap">Tanggal Berkunjung</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
+                                                <?php include 'action/action_dashboard_page.php' ?>
+                                                <?php if (isset($pengunjung)) : ?>
+                                                    <?php foreach ($pengunjung as $row): ?>
+                                                        <tr>
+                                                            <td class="text-nowrap"><?=$row['address']?></td>
+                                                            <td class="text-nowrap"><?=$row['city']?></td>
+                                                            <td class="text-nowrap"><?=$row['state']?></td>
+                                                            <td class="text-nowrap"><?=$row['created_date']?></td>
+                                                        </tr>
+                                                    <?php endforeach; ?>
+                                                <?php endif ?>
+                                                <!-- <tr>
                                                     <td class="text-nowrap">Amanda</td>
                                                     <td class="text-nowrap">amanda@mail.com</td>
                                                     <td class="text-nowrap">21 November 2024</td>
@@ -141,7 +152,7 @@
                                                     <td class="text-nowrap">ayu@mail.com</td>
                                                     <td class="text-nowrap">21 November 2024</td>
                                                     <td class="text-nowrap">Bandung</td>
-                                                </tr>
+                                                </tr> -->
                                         </table>
                                     </div>
                                 </div>
