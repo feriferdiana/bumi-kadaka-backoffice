@@ -44,10 +44,9 @@
 											<input class="form-control form-control-lg" type="email" name="email" placeholder="Enter your email" required />
 										</div>
 										<div class="mb-3">
-											<!-- <div class="d-flex justify-content-between align-items-center">
+											<div class="d-flex justify-content-between align-items-center">
 												<label class="form-label">Password</label>
-												<a href="#">Forgot password?</a>
-											</div> -->
+											</div>
 											<input class="form-control form-control-lg" type="password" name="password" placeholder="Enter your password" required />
 										</div>
 										<div>

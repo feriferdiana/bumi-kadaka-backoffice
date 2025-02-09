@@ -27,10 +27,12 @@
                                             <div class="mb-3">
                                                 <div class=" text-center text-md-start">Total Pengunjung</div>
                                                 <h1 class="fw-bold text-green-400 display-5 text-center text-md-start"><?=$dataCountVisit?></h1>
+                                                <input type="hidden" id="countVisit" value="<?=$dataCountVisit?>" />
                                             </div>
                                             <div class="mb-3">
                                                 <div class=" text-center text-md-start">Total Mengirim Email</div>
                                                 <h1 class="fw-bold text-green-400 display-5 text-center text-md-start"><?=$dataCountEmail['total_email']?></h1>
+                                                <input type="hidden" id="countEmail" value="<?=$dataCountEmail['total_email']?>" />
                                             </div>
                                         </div>
                                         <div>
