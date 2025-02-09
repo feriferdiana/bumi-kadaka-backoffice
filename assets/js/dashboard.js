@@ -1,4 +1,10 @@
 /* partisipan */
+let visit = document.getElementById("data-count-visit").value;
+let email = document.getElementById("data-count-email").value;
+
+alert(visit);
+alert(email);
+
 var canvas = document.getElementById("partisipan");
 var ctx = canvas.getContext('2d');
 var data = {

@@ -2,8 +2,9 @@
 	include "../action/con/connection.php";
 	include "../action/banner_detail_action.php";
 
-	header("Content-Type: application/json");
 	header("Access-Control-Allow-Origin: *");
+    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 	// Ambil parameter dari URL
 	$id = isset($_GET['id']) ? $_GET['id']: null;

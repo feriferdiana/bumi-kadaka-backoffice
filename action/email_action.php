@@ -18,4 +18,6 @@ function insert($firstName, $lastName, $email, $subject, $message){
 	$conn->close();
 }
 
+
+
 ?>
