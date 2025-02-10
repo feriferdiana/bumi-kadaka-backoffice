@@ -46,6 +46,10 @@
                                      <label for="formFile" class="form-label">
                                         Format : .jpg, .jpeg, .png
                                     </label>
+                                    <br/>
+                                    <label for="formFile" class="form-label">
+                                        <i>Rekomendasi Ukuran 1440px × 599px</i>
+                                    </label>
                                 </div>
 
                                 <div class="mb-3 col-12 col-sm-12 col-md-12">
