@@ -20,14 +20,7 @@
                         </div>
                         <h1 class="h3 text-purple-600 mt-1">
                             <strong>Tambah</strong> Akun
-                        </h1>
-
-                        <div style="margin-left: 100px; margin-top: 10px;">
-                            <?php if (isset($_SESSION['message_users'])) : ?>
-                                <label class="form-label"><?php echo $_SESSION['message_users']; ?></label>
-                                <?php unset($_SESSION['message_users']); ?>
-                            <?php endif ?>
-                        </div>                            
+                        </h1>                   
                     </div>
 
 					<div class="card">
@@ -80,6 +73,17 @@
                                 <div class="mb-3 col-12 col-sm-12 col-md-12">
                                     <div class="d-grid">
                                         <button type="submit" name="upload" class="btn btn-primary">Simpan</button>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 col-12 col-sm-12 col-md-12" align="center">
+                                    <div class="d-grid">
+                                        <?php if (isset($_SESSION['message_users'])) : ?>
+                                            <div style="border : 1px solid #EFAE93; background-color: #EFAE93;" align="center">
+                                                <label class="form-label" style="padding-top: 10px;color: white;"><?php echo $_SESSION['message_users']; ?></label>
+                                            </div>
+                                            <?php unset($_SESSION['message_users']); ?>
+                                        <?php endif ?>
                                     </div>
                                 </div>
                             </form>

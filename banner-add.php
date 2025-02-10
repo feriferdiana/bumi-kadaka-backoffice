@@ -21,11 +21,6 @@
                         <h1 class="h3 text-purple-600 mt-1">
                             <strong>Tambah</strong> Banner
                         </h1>
-
-                        <?php if (isset($_SESSION['message_banner'])) : ?>
-                            <label class="form-label"><?php echo $_SESSION['message_banner']; ?></label>
-                            <?php unset($_SESSION['message_banner']); ?>
-                        <?php endif ?>
                     </div>
 
 					<div class="card">
@@ -70,10 +65,12 @@
                                     </div>
                                 </div>
 
-                                <div class="mb-3 col-12 col-sm-12 col-md-6">
+                                <div class="mb-3 col-12 col-sm-12 col-md-12" align="center">
                                     <div class="d-grid">
                                         <?php if (isset($_SESSION['message_banner'])) : ?>
-                                            <label class="form-label"><?php echo $_SESSION['message_banner']; ?></label>
+                                            <div style="border : 1px solid #EFAE93; background-color: #EFAE93;" align="center">
+                                                <label class="form-label" style="padding-top: 10px;color: white;"><?php echo $_SESSION['message_banner']; ?></label>
+                                            </div>
                                             <?php unset($_SESSION['message_banner']); ?>
                                         <?php endif ?>
                                     </div>

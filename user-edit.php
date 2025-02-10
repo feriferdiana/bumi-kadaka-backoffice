@@ -86,6 +86,17 @@
                                         <button type="submit" name="upload" class="btn btn-primary">Simpan</button>
                                     </div>
                                 </div>
+
+                                <div class="mb-3 col-12 col-sm-12 col-md-12" align="center">
+                                    <div class="d-grid">
+                                        <?php if (isset($_SESSION['message_users'])) : ?>
+                                            <div style="border : 1px solid #EFAE93; background-color: #EFAE93;" align="center">
+                                                <label class="form-label" style="padding-top: 10px;color: white;"><?php echo $_SESSION['message_users']; ?></label>
+                                            </div>
+                                            <?php unset($_SESSION['message_users']); ?>
+                                        <?php endif ?>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>

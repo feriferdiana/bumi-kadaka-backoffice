@@ -21,11 +21,6 @@
                         <h1 class="h3 text-purple-600 mt-1">
                             <strong>Tambah</strong> Berita
                         </h1>
-
-                        <?php if (isset($_SESSION['message_news'])) : ?>
-                            <label class="form-label"><?php echo $_SESSION['message_news']; ?></label>
-                            <?php unset($_SESSION['message_news']); ?>
-                        <?php endif ?>
                     </div>
 
 					<div class="card">
@@ -84,6 +79,17 @@
                                     <div class="d-grid">
                                         <?php if (isset($_SESSION['message_news'])) : ?>
                                             <label class="form-label"><?php echo $_SESSION['message_news']; ?></label>
+                                            <?php unset($_SESSION['message_news']); ?>
+                                        <?php endif ?>
+                                    </div>
+                                </div>
+
+                                <div class="mb-3 col-12 col-sm-12 col-md-12" align="center">
+                                    <div class="d-grid">
+                                        <?php if (isset($_SESSION['message_news'])) : ?>
+                                            <div style="border : 1px solid #EFAE93; background-color: #EFAE93;" align="center">
+                                                <label class="form-label" style="padding-top: 10px;color: white;"><?php echo $_SESSION['message_news']; ?></label>
+                                            </div>
                                             <?php unset($_SESSION['message_news']); ?>
                                         <?php endif ?>
                                     </div>
