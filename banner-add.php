@@ -32,7 +32,7 @@
                                     <span class="material-icons md-14">file_upload</span> Pilih Gambar
                                         <input type="file" name="file" id="file" class="file" multiple accept="image/*" required>
                                     </button>
-                                    <label for="formFile" class="form-label">
+                                     <label for="formFile" class="form-label">
                                         Format : .jpg, .jpeg, .png
                                     </label>
                                     <br/>

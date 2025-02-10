@@ -19,21 +19,14 @@
 
                         <div>
                             <div class="d-flex mb-2">
-                                <?php if (isset($_SESSION['message_news'])) : ?>
-                                    <label class="form-label"><?php echo $_SESSION['message_news']; ?></label>
-                                    <?php unset($_SESSION['message_news']); ?>
-                                <?php endif ?>
-
-                                <!-- <div class="me-1">
-                                    <form class="d-flex search" onsubmit="return false">
-                                        <input class="form-control form-control-custom me-2" type="search" placeholder="Cari nama berita" aria-label="Search" autocomplete="off" />
-                                    </form>
-                                </div> -->
-                                <!-- <div>
-                                    <a href="news-add.php" class="btn btn-primary">
-                                        <span class="material-icons small">add</span> Tambah
-                                    </a>
-                                </div> -->
+                                <div class="me-1">
+                                    <?php if (isset($_SESSION['message_news'])) : ?>
+                                            <div style="border : 1px solid #EFAE93; background-color: #EFAE93; border-radius: 5px;" align="center;">
+                                            <label class="form-label" style="padding-top: 10px; padding-right:10px; padding-left:10px; color: white;"><?php echo $_SESSION['message_news']; ?></label>
+                                        </div>
+                                        <?php unset($_SESSION['message_news']); ?>
+                                    <?php endif ?>
+                                </div>
                             </div>
                         </div>
                     </div>

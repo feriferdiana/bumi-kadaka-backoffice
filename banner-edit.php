@@ -48,7 +48,7 @@
                                     </label>
                                     <br/>
                                     <label for="formFile" class="form-label">
-                                        <i>Rekomendasi Ukuran 1440px × 599px</i>
+                                        Rekomendasi Ukuran 1440px × 599px
                                     </label>
                                 </div>
 
